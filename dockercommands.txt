@@ -3,3 +3,6 @@
 
 #to create mongo container
   docker run --name citi-mongo-c1 -p 27017:27017 -d mongo
+# to create mongo client 
+   docker exec -it citi-mongo-c1 /bin/bash
+  
