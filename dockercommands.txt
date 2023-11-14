@@ -10,4 +10,11 @@
    docker exec -it citi-mongo-c1 /bin/bash
 # to run mongo client or shell from bash prompt
  mongosh
+#create the db
+use customerdb;
+#insert the document
+ db.customers.insert({"id::24543,"name":"parameswari"});
+#show dbs;
+
+
   
