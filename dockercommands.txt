@@ -1,0 +1,5 @@
+# pull the image
+  docker pull mongo
+
+#to create mongo container
+  docker run --name citi-mongo-c1 -p 27017:27017 -d mongo
