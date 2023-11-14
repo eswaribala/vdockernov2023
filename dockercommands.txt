@@ -13,8 +13,9 @@
 #create the db
 use customerdb;
 #insert the document
- db.customers.insert({"id::24543,"name":"parameswari"});
+ db.customers.insert({"id":24543,"name":"parameswari"});
 #show dbs;
-
+#to check the container logs
+docker logs <containerid> or <containername>
 
   
