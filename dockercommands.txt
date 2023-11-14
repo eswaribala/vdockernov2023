@@ -8,4 +8,6 @@
 
 # to create mongo client 
    docker exec -it citi-mongo-c1 /bin/bash
+# to run mongo client or shell from bash prompt
+ mongosh
   
