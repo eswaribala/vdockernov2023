@@ -20,6 +20,7 @@ docker logs <containerid> or <containername>
 #push the image from local repository to jfrog repository
 Step1
 docker tag mongo:latest vtraining2023.jfrog.io/docker/mongo:v1
-
+Step2 
+docker push vtraining2023.jfrog.io/docker/mongo:v1
 
   
