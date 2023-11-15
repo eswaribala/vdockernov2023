@@ -34,5 +34,5 @@ docker push <dockerhubusername>/<reponame>:imagetagname
 docker pull mysql
 docker run --name v-mysql -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=testdb -e MYSQL_USER=demo_user -e MYSQL_PASSWORD=demo_pass -d mysql
 mysql client
-docker exec -it nec-mysql mysql -u root -p
+docker exec -it v-mysql mysql -u root -p
   
