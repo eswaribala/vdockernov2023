@@ -17,5 +17,9 @@ use customerdb;
 #show dbs;
 #to check the container logs
 docker logs <containerid> or <containername>
+#push the image from local repository to jfrog repository
+Step1
+docker tag mongo:latest vtraining2023.jfrog.io/docker/mongo:v1
+
 
   
