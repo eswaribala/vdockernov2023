@@ -23,4 +23,12 @@ docker tag mongo:latest vtraining2023.jfrog.io/docker/mongo:v1
 Step2 
 docker push vtraining2023.jfrog.io/docker/mongo:v1
 
+#docker hub repository
+#push the image
+Step 1
+docker tag <imagename> <dockerhubusername>/<reponame>:imagetagname
+Step2
+docker push <dockerhubusername>/<reponame>:imagetagname
+
+
   
