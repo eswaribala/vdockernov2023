@@ -39,4 +39,7 @@ docker exec -it v-mysql mysql -u root -p
 #build customer application image
 go to project root folder
 docker build -f dockerfile -t customerapp .
+#create customer app container and link this to mysql container
+docker run -p 7072:7072 --name customerapp-c1 --link v-mysql:mysql -d customerapp:latest
+
   
