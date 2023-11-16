@@ -46,4 +46,6 @@ http://localhost:7072/swagger-ui.html
 
 #how to run compose file
 docker-compose up
+#run compose file in detached mode
+docker-compose up -d
   
