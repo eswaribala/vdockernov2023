@@ -1,4 +1,4 @@
 #register with learning portal to watch daywise recordig
 https://learning.rpsconsulting.in/login
-#share the credentials whatever you used in learning portal to Gopi, using the follwing link
+#share the email and username whatever you used in learning portal to Gopi, using the follwing link
 https://forms.office.com/r/GWNU6C2Ad9
