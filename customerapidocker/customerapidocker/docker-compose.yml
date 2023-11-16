@@ -22,6 +22,13 @@ services:
     depends_on:
       - mysql
     deploy:
+      resources:
+        limits:
+          cpus: '8'
+          memory: 2048M
+        reservations:
+          cpus: '8'
+          memory: 2048M
       restart_policy:
         condition: on-failure
         delay: 5s
@@ -39,9 +46,9 @@ services:
 ### put all the networks here
 #networks:
   #boanetwork:
-networks: 
-  default: 
-    external: 
-      name: boanetwork
+#networks: 
+  #default: 
+    #external: 
+      #name: boanetwork
 
   
