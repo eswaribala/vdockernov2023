@@ -41,6 +41,9 @@ go to project root folder
 docker build -f dockerfile -t customerapp .
 #create customer app container and link this to mysql container
 docker run -p 7072:7072 --name customerapp-c1 --link v-mysql:mysql -d customerapp:latest
+#to check api in browser
+http://localhost:7072/swagger-ui.html
+
 #how to run compose file
 docker-compose up
   
