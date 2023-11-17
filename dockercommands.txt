@@ -62,6 +62,10 @@ ls
 #docker volumes
 #create docker volume along with container
 docker container run -it -v/ubuntuvol --tty ubuntu /bin/bash
+#create files in volume
+cd ubuntuvol
+touch file1.txt file2.txt
+
 
 
   
