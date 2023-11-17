@@ -51,4 +51,8 @@ docker-compose up -d
 
 #docker compose scale to scale the conainers
 docker-compose up --scale customer-app=3
+
+#to check docker compose mysql secret
+docker exec -it <mysql containerid> /bin/bash
+
   
