@@ -85,6 +85,11 @@ docker container run -it -v/ubuntuvol --tty ubuntu /bin/bash
 #copy file from localmachine to container
 docker cp intructions.txt <containerid>:/ubuntuvol
 
+#copy files from localdisk to docker volume recursively
+docker container run -it -v "c:/Local disk/Docker/dockercompose/secrets":/mnt/vtest ubuntu /bin/bash
+
+
+
 
 
 
