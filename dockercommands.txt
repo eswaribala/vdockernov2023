@@ -65,6 +65,16 @@ docker container run -it -v/ubuntuvol --tty ubuntu /bin/bash
 #create files in volume
 cd ubuntuvol
 touch file1.txt file2.txt
+#stop the container
+exit
+#to restart the container
+docker container restart <containerid>
+#to go to bash shell
+docker attach <containerid>
+#check the volume
+cd ubuntuvol
+ls
+
 
 
 
