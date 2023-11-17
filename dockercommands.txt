@@ -74,6 +74,17 @@ docker attach <containerid>
 #check the volume
 cd ubuntuvol
 ls
+exit
+docker container rm <containerid>
+
+#copy the file from local machine to docker container
+
+docker container run -it -v/ubuntuvol --tty ubuntu /bin/bash
+
+#go to another cli
+#copy file from localmachine to container
+docker cp intructions.txt <containerid>:/ubuntuvol
+
 
 
 
