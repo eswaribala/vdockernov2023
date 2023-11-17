@@ -111,7 +111,8 @@ docker run -it -v /var/volume1 -v /var/volume2 busybox
 docker volume create customervol
 docker volume ls
 
-
+#associate the user defined volume to mysql container
+docker run --name v-mysql -v/customervol  -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=testdb -e MYSQL_USER=demo_user -e MYSQL_PASSWORD=demo_pass -d mysql
 
 
 
