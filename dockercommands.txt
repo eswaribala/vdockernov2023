@@ -88,6 +88,21 @@ docker cp intructions.txt <containerid>:/ubuntuvol
 #copy files from localdisk to docker volume recursively
 docker container run -it -v "c:/Local disk/Docker/dockercompose/secrets":/mnt/vtest ubuntu /bin/bash
 
+#data sharing between containers
+data volume container for data sharing
+docker run -it -v /data --name container1 busybox
+
+cd data
+touch file1.txt
+touch file2.txt
+let it be running
+open another terminal
+docker exec container1 ls /data
+
+launch another container
+docker run -it --volumes-from container1 --name container2 busybox
+
+
 
 
 
