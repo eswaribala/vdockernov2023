@@ -59,4 +59,9 @@ cd /run/secrets
 ls
 # you can see passwords
 
+#docker volumes
+#create docker volume along with container
+docker container run -it -v/ubuntuvol --tty ubuntu /bin/bash
+
+
   
