@@ -54,5 +54,9 @@ docker-compose up --scale customer-app=3
 
 #to check docker compose mysql secret
 docker exec -it <mysql containerid> /bin/bash
+#after reaching bash shell, go to /run/secrets
+cd /run/secrets
+ls
+# you can see passwords
 
   
