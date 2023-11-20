@@ -62,9 +62,9 @@ services:
 ### put all the networks here
 #networks:
   #boanetwork:
-#networks: 
-  #default: 
-    #external: 
-      #name: boanetwork
+networks: 
+  default: 
+    external: 
+      name: citi-network
 
   
