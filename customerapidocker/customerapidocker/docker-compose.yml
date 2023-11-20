@@ -65,6 +65,6 @@ services:
 networks: 
   default: 
     external: 
-      name: citi-network
+      name: citi_network
 
   
