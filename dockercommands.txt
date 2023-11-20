@@ -120,14 +120,9 @@ docker network ls
 docker network inspect host
 
 docker run my_container --net=my_network
-
-
 docker network inspect bridge
 
 create our own network
-
-
-
 docker network ls
 docker network create --driver bridge citi_network
 docker network inspect citi_network
