@@ -1,6 +1,6 @@
 #create kube cluster
 Step 1
-docker-desktop multi node cluster
+#docker-desktop multi node cluster
 curl.exe -Lo kind-windows-amd64.exe https://kind.sigs.k8s.io/dl/v0.10.0/kind-windows-amd64
 
 Step2
