@@ -4,7 +4,9 @@ docker-desktop multi node cluster
 curl.exe -Lo kind-windows-amd64.exe https://kind.sigs.k8s.io/dl/v0.10.0/kind-windows-amd64
 
 Step2
-copy .\kind-windows-amd64.exe d:\kube\kind.exe
+go to c:
+create folder named as kube and then run the following command
+copy .\kind-windows-amd64.exe c:\kube\kind.exe
 
 Step 3
 Go to cd d:\kube
