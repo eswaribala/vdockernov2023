@@ -9,7 +9,7 @@ create folder named as kube and then run the following command
 copy .\kind-windows-amd64.exe c:\kube\kind.exe
 
 Step 3
-Go to cd d:\kube
+Go to cd c:\kube
 Step 4
 kind create cluster # Default cluster context name is `kind`.
 Step 5
