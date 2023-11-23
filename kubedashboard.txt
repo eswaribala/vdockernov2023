@@ -1,0 +1,17 @@
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml
+kubectl get all -n kubernetes-dashboard
+
+##########################################################alternative(kube version 1.22 onwards)
+
+kubectl create serviceaccount cluster-admin-dashboard -n kubernetes-dashboard
+
+
+kubectl create clusterrolebinding cluster-admin-dashboard  --clusterrole=cluster-admin --serviceaccount=kubernetes-dashboard:cluster-admin-dashboard -n kubernetes-dashboard
+
+kubectl create token cluster-admin-dashboard -n kubernetes-dashboard
+
+###################################################################
+
+kubectl proxy
+
+http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
