@@ -1,0 +1,37 @@
+Business Requirement
+
+Microservice should be in kubernetes. Already image is available in hub
+
+
+Step 1
+
+1.create the microservice image and push to hub
+docker build -f dockerfile -t <imagename> .
+docker tag <imagename>:latest <dockerhubid>/<reponame>:imagename
+docker push <dockerhubid>/<reponame>:imagename
+
+Step 2
+
+It will mysql kube deployment
+
+1. kube deploy volume and claimable volume
+2. Kube deploy mysql
+3. Test mysql client
+
+
+Step3
+
+1. Deploy prometheus
+
+
+
+Step4
+
+Pull the image from hub and it will be deployed in kube
+
+1. Integrate microservice with mysql through deployment file
+2. Deploy the ms
+3. Enable the Load balancer
+4. Access ms using kube service
+5. Autoscaling
+
