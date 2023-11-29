@@ -141,3 +141,8 @@ kubectl delete hpa ${name of hpa}
 
 #pull metric server
 git clone https://github.com/kubernetes-sigs/metrics-server.git
+#go to deployment file
+cd metrics-server\manifests\base
+#deploy the file
+kubectl apply -f .
+
