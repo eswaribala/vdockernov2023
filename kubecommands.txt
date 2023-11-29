@@ -138,3 +138,6 @@ az network public-ip create --resource-group  mc_vebgroup_vebcluster_southindia 
 kubectl autoscale deployment customerapp --min=1 --max=4 --cpu-percent=20
 
 kubectl delete hpa ${name of hpa}
+
+#pull metric server
+git clone https://github.com/kubernetes-sigs/metrics-server.git
