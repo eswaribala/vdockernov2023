@@ -1,0 +1,5 @@
+kubectl apply -f metrics-server.yaml
+
+kubectl get pods -n kube-system | findstr metrics-server
+
+Check dashboard for pod metrics
