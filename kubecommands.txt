@@ -149,4 +149,9 @@ kubectl apply -f .
 #create secrets
 kubectl create secret generic mysqlsecret --from-literal=username=root --from-literal=password=test@123
 
+#get secrets
+kubectl get secrets
+ #delete secrets
+kubectl delete secret <name of the secret>
+
 
