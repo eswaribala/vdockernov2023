@@ -146,3 +146,7 @@ cd metrics-server\manifests\base
 #deploy the file
 kubectl apply -f .
 
+#create secrets
+kubectl create secret generic mysqlsecret --from-literal=username=root --from-literal=password=test@123
+
+
