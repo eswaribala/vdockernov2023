@@ -157,3 +157,9 @@ kubectl delete secret <name of the secret>
 # secret from file
 kubectl create secret generic db-user-pass --from-file=username.txt  --from-file=password.txt
 
+#config map from literal
+kubectl create configmap literal-config-mysql --from-literal=literal-port=3306 --from-literal=literal-host=127.0.0.1 
+
+kubectl get configmaps
+
+
