@@ -154,4 +154,6 @@ kubectl get secrets
  #delete secrets
 kubectl delete secret <name of the secret>
 
+# secret from file
+kubectl create secret generic db-user-pass --from-file=username.txt  --from-file=password.txt
 
