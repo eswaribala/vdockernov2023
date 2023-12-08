@@ -163,4 +163,14 @@ kubectl create configmap literal-config-mysql --from-literal=literal-port=3306 -
 kubectl get configmaps
 kubectl describe configmap literal-config-mysql
 
+#to test postgres client
 
+kubectl exec -it postgres-7b9fb8d6c5-jsmw6 -- psql -h localhost -U admin --password -p 5432 postgresdb
+# to list all the databases
+\l
+#to use the database
+\c dbname
+#to list all the tables
+\dt
+# to quit from postgres
+\q
