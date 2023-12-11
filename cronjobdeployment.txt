@@ -1,0 +1,87 @@
+$ cat deploy-script.sh
+#!/bin/bash
+
+echo "Creaing 'web-app'"
+kubectl create deployment web-app --image=nginx
+sleep 10
+echo "Deleting 'web-app'"
+kubectl delete deployment web-app
+
+$ cat deploy-script-configmap.yml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: deploy-script
+data:
+  deployScript.sh: |
+    #!/bin/bash
+
+    echo "Creaing 'web-app'"
+    kubectl create deployment web-app --image=nginx
+    sleep 10
+    echo "Deleting 'web-app'"
+    kubectl delete deployment web-app
+
+$ kubectl apply -f deploy-script-configmap.yml
+configmap/deploy-script created
+
+$ cat cron-job.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: cron-user
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: cron-user-binding
+subjects:
+  - kind: ServiceAccount
+    name: cron-user
+    namespace: default
+roleRef:
+  kind: ClusterRole
+  name: edit
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: deploy-cron-job
+spec:
+  schedule: "*/2 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: cron-user
+          volumes:
+            - name: deploy-script
+              configMap:
+                name: deploy-script
+          containers:
+          - name: cron-job-1
+            image: bitnami/kubectl
+            command: ["bash", "/mnt/deployScript.sh"]
+            volumeMounts:
+            - name: deploy-script
+              mountPath: /mnt/
+
+$ kubectl apply -f cron-job.yaml
+serviceaccount/cron-user created
+clusterrolebinding.rbac.authorization.k8s.io/cron-user-binding created
+cronjob.batch/deploy-cron-job created
+
+$ kubectl get cronjob
+NAME              SCHEDULE      SUSPEND   ACTIVE   
+deploy-cron-job   */2 * * * *   False     1   
+
+$ kubectl get pods
+NAME                                       READY   STATUS        RESTARTS   AGE
+deploy-cron-job-1626426840-6w6s9           0/1     Completed     0          21s
+
+$ kubectl logs -f deploy-cron-job-1626426840-6w6s9
+Creaing 'web-app'
+deployment.apps/web-app created
+Deleting 'web-app'
+deployment.apps "web-app" deleted
