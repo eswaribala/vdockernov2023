@@ -44,7 +44,7 @@ roleRef:
   name: edit
   apiGroup: rbac.authorization.k8s.io
 ---
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: deploy-cron-job
@@ -54,7 +54,9 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: Never
           serviceAccountName: cron-user
+             
           volumes:
             - name: deploy-script
               configMap:
