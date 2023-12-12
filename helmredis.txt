@@ -7,3 +7,9 @@ kubectl run --namespace default redis-client --restart="Never"  --env REDIS_PASS
 
 kubectl exec -it citi-redis-master-0 bin/bash
 redis-cli -h localhost -a admin1234
+#go to redi cli and test liveness by giving the following
+ping
+
+#removing helm deployment
+helm list
+helm delete deploymentname
