@@ -1,0 +1,9 @@
+choco install kubernetes-helm
+Or
+https://github.com/helm/helm/releases
+Unzip
+Initialize helm using the helm init command.
+Finally, add the repo of the helm chart using the below-given command.
+helm repo add stable https://kubernetes-charts.storage.googleapis.com/
+helm repo list
+
