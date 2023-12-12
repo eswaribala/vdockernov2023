@@ -1,0 +1,9 @@
+helm install citi-redis --set auth.password="admin1234" bitnami/redis
+kubectl get secrets citi-redis -o yaml
+kubectl get secret --namespace default citi-redis -o jsonpath="{.data.redis-password}"
+YWRtaW4xMjM0
+YWRtaW4xMjM0
+kubectl run --namespace default redis-client --restart="Never"  --env REDIS_PASSWORD=YWRtaW4xMjM0 --image docker.io/bitnami/redis:6.2.4-debian-10-r13 --command -- sleep infinity
+
+kubectl exec -it citi-redis-master-0 bin/bash
+redis-cli -h localhost -a admin1234
