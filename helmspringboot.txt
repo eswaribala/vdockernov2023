@@ -3,3 +3,5 @@ helm create springboot-starterkit-svc
 helm install springboot-starterkit-svc --generate-name
 kubectl get pods 
 kubectl describe pods/springboot-starterkit-svc-7cd4657ddb-5l4t4
+
+kubectl port-forward svc/<svcname>  8080:80
