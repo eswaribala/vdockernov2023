@@ -1,5 +1,5 @@
 helm repo add springboot https://josephrodriguez.github.io/springboot-helm-charts
 helm create springboot-starterkit-svc  
-helm install springboot-starterkit-svc springboot/springboot-starterkit-svc --dry-run
+helm install springboot-starterkit-svc --generate-name
 kubectl get pods 
 kubectl describe pods/springboot-starterkit-svc-7cd4657ddb-5l4t4
