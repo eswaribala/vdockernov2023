@@ -6,3 +6,6 @@
 6.helm install nginx-ingress ingress-nginx/ingress-nginx --set controller.publishService.enabled=true
 7.watch the load balancer by running
 kubectl --namespace default get services -o wide -w nginx-ingress-ingress-nginx-controller
+Kubectl apply –f app-ingress.yaml
+kubectl get ingress hello-kubernetes-ingress
+kubectl describe ingress hello-kubernetes-ingress
