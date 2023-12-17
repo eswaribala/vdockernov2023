@@ -125,6 +125,7 @@ kubectl expose deployment --port 7070 customerapp --type=LoadBalancer --name=cus
 kubectl expose deployment --port 8090 --target-port 80 invapp --type=LoadBalancer --name=invservicev1
 #external ip pending then
 sudo microk8s kubectl patch svc traderservicev1  -p '{"spec": {"type": "LoadBalancer", "externalIPs":["172.22.0.1"]}}'
+kubectl expose deployment example-activiti-cloud-modeling --type=LoadBalancer --name=modelingv1 --external-ip=54.156.5.115
 #delete
 kubectl delete deploy mysql-app
 kubectl delete svc mysqlservice
