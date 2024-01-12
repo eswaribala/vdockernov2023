@@ -7,5 +7,7 @@ If the above command fails, use the following
 sudo apt-get install -y docker.io
 and check docker -v
 
+sudo apt-get install docker-compose
+
  sudo usermod -aG docker $USER
  
